@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Suspended</title>
+</head>
+<body>
+
+    <!-- The main text displayed on the page -->
+    <div id="mainContent">
+        This service has been <span id="suspendClick" style="cursor: pointer;">sus</span>pended by its owner.
+    </div>
+
+    <!-- Hidden links that will appear after clicking "sus" -->
+    <div id="redirectLinks" style="display: none; text-align: center; margin-top: 20px;">
+        <p><h1>Welcome to the GAME-LIBRARY</h1></p>
+        <p><a href="./fun/eaglercraft" target="_blank">Eaglercraft</a></p>
+        <p><a href="./fun/fnf" target="_blank">Friday Night Funkin</a></p>
+        <p><a href="https://www.github.com" target="_blank">GitHub</a></p>
+    </div>
+
+    <script>
+        // Get references to the elements
+        const suspendClickElement = document.getElementById('suspendClick');
+        const mainContentElement = document.getElementById('mainContent');
+        const redirectLinksElement = document.getElementById('redirectLinks');
+        const bodyElement = document.body;
+
+        // Add a click event listener to the "sus" span
+        suspendClickElement.addEventListener('click', function() {
+            // Change background to black
+            bodyElement.style.backgroundColor = 'black';
+            // Hide the original text
+            mainContentElement.style.display = 'none';
+
+            // Wait for 1 second (1000 milliseconds)
+            setTimeout(function() {
+                // Change background back to white
+                bodyElement.style.backgroundColor = 'white';
+                // Show the redirect links
+                redirectLinksElement.style.display = 'block';
+            }, 1000); // 1000ms = 1 second
+        });
+    </script>
+
+</body>
+</html>
